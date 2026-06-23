@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>С Днём Рождения, Юля!</title>
+    
+    <link rel="stylesheet" href="style.css">
+    <link rel="preload" as="video" href="video/bl1.mp4">
+</head>
+<body>
+
+    <!-- ============================================================ -->
+    <!-- БЛОК 1: ВИДЕО-ПРИВЕТСТВИЕ -->
+    <!-- ============================================================ -->
+    <section class="block block-1" id="block1">
+        <video class="bg-video" autoplay loop playsinline>
+            <source src="video/bl1.mp4" type="video/mp4">
+        </video>
+        <div class="overlay"></div>
+        
+        <div class="content">
+            <h1 class="main-title">С днём рождения, Юля!</h1>
+            <p class="subtitle">Я приготовила для тебя <br>
+                небольшое путешествие
+                по нашим воспоминаниям.</p>
+        </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- БЛОК 2: НАША ИСТОРИЯ + КАРУСЕЛЬ -->
+    <!-- ============================================================ -->
+    <section class="block block-2" id="block2">
+        <div class="memory-section">
+            <span class="memory-label">2004 — 2026</span>
+            <h2 class="memory-title">
+                22 года истории,<br>
+                которые невозможно<br>
+                пересказать в двух абзацах.
+            </h2>
+            <div class="story-text">
+                <p>Ровно 22 года назад появилась моя лучшая подруга.</p>
+                <p>
+                    Школа, прогулки домой, записки в блокноте, дурацкие фильмы,
+                    разговоры на лавочке возле дома, поддержка, смех и сотни
+                    других моментов, которые давно стали частью нашей истории.
+                </p>
+                <p>Я знаю тебя большую часть своей жизни и очень рада, что ты есть в ней.</p>
+            </div>
+            <div class="carousel-container" id="carouselContainer">
+                <div class="carousel-track" id="carouselTrack"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- БЛОК 3: ЛЮБИМЫЙ КАДР -->
+    <!-- ============================================================ -->
+    <section class="block block-3" id="block3">
+        <div class="favorite-frame">
+            <div class="frame-text">
+                <span class="frame-label">★ любимый кадр</span>
+                <h2 class="frame-title">
+                    Один из моих<br>
+                    любимых кадров
+                </h2>
+            </div>
+            <div class="frame-image-wrapper">
+                <img src="images/photo_43_2026-06-24_01-13-26.jpg" alt="Любимый кадр" class="frame-image">
+                <p class="frame-caption">
+                    фото, которое всегда вызывает улыбку
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- БЛОК 4: ЭКРАН-ПАУЗА -->
+    <!-- ============================================================ -->
+    <section class="block block-4" id="block4">
+        <div class="pause-screen">
+            <p class="pause-text">
+                Некоторые люди появляются<br>
+                в жизни случайно.
+            </p>
+            <p class="pause-text pause-text-second">
+                Но остаются навсегда.
+            </p>
+        </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- БЛОК 5: ВИДЕО-ПОДАРОК -->
+    <!-- ============================================================ -->
+    <section class="block block-5" id="block5">
+        <div class="gift-screen">
+            <h2 class="gift-title">И последнее.</h2>
+            <p class="gift-subtitle">
+                Я приготовила для тебя<br>
+                кое-что особенное.
+            </p>
+            <button class="gift-btn" id="surpriseBtn">Открыть</button>
+            <div class="gift-output" id="surpriseOutput"></div>
+        </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- БЛОК 6: ФИНАЛ -->
+    <!-- ============================================================ -->
+    <section class="block block-6" id="block6">
+        <div class="final-screen">
+            <h2 class="final-title">
+                С днём рождения,<br>
+                Юля.
+            </h2>
+            <p class="final-subtitle">
+                Спасибо,<br>
+                что ты есть в моей жизни.
+            </p>
+            <div class="final-photo-wrapper">
+                <img src="images/photo_15_2026-06-24_01-13-26.jpg" alt="Финальное фото" class="final-photo">
+            </div>
+            <p class="final-sign">С любовью, Алина</p>
+            <p class="final-year">2026</p>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
