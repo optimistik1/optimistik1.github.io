@@ -488,12 +488,12 @@ body {
     .carousel-slide {
         min-width: 70%;
     }
-    
+
     .carousel-slide img {
         width: 100%;
-        aspect-ratio: 3 / 4;
-        height: auto;
+        height: clamp(260px, 32vw, 420px);
         object-fit: cover;
+        border-radius: 24px;
     }
     
     .memory-title {
