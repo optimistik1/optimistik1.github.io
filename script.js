@@ -10,15 +10,13 @@ document.addEventListener('DOMContentLoaded', function() {
         const videoObserver = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
-                    // Блок виден — запускаем видео
                     bgVideo.play().catch(() => {});
                 } else {
-                    // Блок скрыт — ставим на паузу
                     bgVideo.pause();
                 }
             });
         }, {
-            threshold: 0.3 // 30% блока видно — запускаем
+            threshold: 0.3
         });
 
         videoObserver.observe(block1);
@@ -76,7 +74,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     function getSlidesPerView() {
         const width = window.innerWidth;
-        if (width <= 480) return 3;
+        if (width <= 480) return 1;  // ← ИСПРАВЛЕНО: на телефонах 1 фото
         if (width <= 768) return 2;
         return 3;
     }
@@ -86,14 +84,11 @@ document.addEventListener('DOMContentLoaded', function() {
         const cloneCount = 5;
 
         for (let repeat = 0; repeat < cloneCount; repeat++) {
-
             photos.forEach(photo => {
-
                 const slide = document.createElement('div');
                 slide.className = 'carousel-slide';
 
                 const img = document.createElement('img');
-
                 img.src = `images/${photo}`;
                 img.alt = 'Фото';
                 img.loading = 'lazy';
@@ -104,9 +99,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
                 slide.appendChild(img);
                 track.appendChild(slide);
-
             });
-
         }
 
         currentIndex = 0;
@@ -290,16 +283,17 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
+    // ================================================================
+    // 5. ПАРАЛЛАКС ДЛЯ ВИДЕО (лёгкий эффект при скролле)
+    // ================================================================
     const heroVideo = document.querySelector('.bg-video');
 
     window.addEventListener('scroll', () => {
-
         const y = window.scrollY;
-
         if (y < window.innerHeight) {
             heroVideo.style.transform =
                 `translate(-50%, calc(-50% + ${y * 0.15}px))`;
         }
-
     });
+
 });
