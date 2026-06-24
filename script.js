@@ -68,7 +68,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const totalSlides = photos.length;
     let currentIndex = 0;
     let autoplayInterval = null;
-    const AUTOPLAY_DELAY = 500;
+    const AUTOPLAY_DELAY = 2500;
     let slidesPerView = getSlidesPerView();
     let isTransitioning = false;
 
@@ -81,7 +81,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     function createSlides() {
         track.innerHTML = '';
-        const cloneCount = 5;
+        const cloneCount = 15;
 
         for (let repeat = 0; repeat < cloneCount; repeat++) {
             photos.forEach(photo => {
@@ -118,7 +118,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     function checkAndFixLoop() {
-        const totalCloned = totalSlides * 5;
+        const totalCloned = totalSlides * 15;
         const maxIndex = totalCloned - slidesPerView;
 
         if (currentIndex >= maxIndex) {
