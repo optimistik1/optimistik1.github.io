@@ -86,12 +86,27 @@ document.addEventListener('DOMContentLoaded', function() {
         const cloneCount = 5;
 
         for (let repeat = 0; repeat < cloneCount; repeat++) {
+
             photos.forEach(photo => {
+
                 const slide = document.createElement('div');
                 slide.className = 'carousel-slide';
-                slide.innerHTML = `<img src="images/${photo}" alt="Фото" loading="lazy">`;
+
+                const img = document.createElement('img');
+
+                img.src = `images/${photo}`;
+                img.alt = 'Фото';
+                img.loading = 'lazy';
+
+                img.addEventListener('load', () => {
+                    img.classList.add('loaded');
+                });
+
+                slide.appendChild(img);
                 track.appendChild(slide);
+
             });
+
         }
 
         currentIndex = 0;
@@ -110,7 +125,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     function checkAndFixLoop() {
-        const totalCloned = totalSlides * 10;
+        const totalCloned = totalSlides * 5;
         const maxIndex = totalCloned - slidesPerView;
 
         if (currentIndex >= maxIndex) {
@@ -274,4 +289,17 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         });
     }
+
+    const heroVideo = document.querySelector('.bg-video');
+
+    window.addEventListener('scroll', () => {
+
+        const y = window.scrollY;
+
+        if (y < window.innerHeight) {
+            heroVideo.style.transform =
+                `translate(-50%, calc(-50% + ${y * 0.15}px))`;
+        }
+
+    });
 });
